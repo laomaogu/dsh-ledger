@@ -1,0 +1,59 @@
+{
+  "name": "dsh-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal bookkeeping plugin for DeepSeek Harness: record expenses, analyse spending by time/category/payment method/weekday/month, get budget-aware tips and inline SVG charts. Data stays on this machine.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "bookkeeping",
+    "ledger",
+    "expense-tracker",
+    "personal-finance",
+    "charts"
+  ],
+  "license": "MIT",
+  "author": "dsh-ledger contributors",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "scripts": {
+    "check": "node --check index.js && node --check client.js"
+  },
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": "^0.2.1-alpha.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-modules"
+      ]
+    }
+  }
+}

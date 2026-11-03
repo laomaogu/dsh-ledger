@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Local data and artefacts
+*.log
+*.tgz
+dist/
+coverage/
+.artifacts/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
